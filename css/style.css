@@ -1,0 +1,38 @@
+ * {
+    box-sizing: border-box; /*tamaños desde el borde siempre*/
+ }
+
+ body {
+    margin: 0;
+    background-image: url(../img/fondo.jpg);
+    background-size: cover;
+ }
+
+ .espejo {
+    position: absolute; /*está por encima de la capa anterior*/
+    top: 0; /*para que empiece en la esquina de arriba*/
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color:black;
+    opacity: .5;
+ }
+
+ .content::before { /*con el before y las dos instrucciones de abajao ponemos una capa encima con la que podemos hacer lo que quereamos*/
+    content: ""; /*podemos añadir texto, cada vez que usemos esta clase aparecerá lo que escribamos*/
+    display: block;
+
+    position: absolute; /*capa nueva*/
+    /*si hay solapamiento usamos z-index para indicar el orden*/
+    top: 0; 
+    left: 0;
+    width: 100%;
+    height: 100%;
+ }
+
+ img[src="img/logo.png"] {
+    position: absolute; /*capa nueva*/
+    top: 30px;
+    left: 60px;
+ }
+
